@@ -45,7 +45,7 @@ jobs:
           path: ./public
           remote_path: /home/elvis/hugo/
           remote_host: 8.134.95.44
-          remote_user: elvis
+          remote_user: root
           remote_key: ${{ secrets.HEXO_DEPLOY_KEY }}
 
       
