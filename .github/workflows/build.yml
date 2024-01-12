@@ -30,6 +30,7 @@ jobs:
         ssh-keyscan 8.134.95.44 >> ~/.ssh/known_hosts
         git config --global user.name "elvis"
         git config --global user.email "elvis.liang@gmail.com"
+        git submodule update
         npm i -g hexo-cli
         npm i
         hexo clean && hexo generate && hexo deploy
