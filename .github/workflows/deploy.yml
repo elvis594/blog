@@ -39,12 +39,13 @@ jobs:
 
       # 部署
       - name: Deploy
-        uses: wlixcc/SFTP-Deploy-Action@v1.0
+        uses: burnett01/rsync-deployments@6.0.0
         with:
-            username: 'root'   # ssh user name
-            server: '8.134.95.44' # 引用之前创建好的secret
-            ssh_private_key: ${{ secrets.HEXO_DEPLOY_KEY }} # 引用之前创建好的secret
-            local_path: './public'  # 对应我们项目build的文件夹路径（config.yml）
-            remote_path: '/home/elvis/hugo/' # 要部署到的位置
+          switches: -avzr --delete
+          path: ./public
+          remote_path: /home/elvis/hugo/
+          remote_host: 8.134.95.44
+          remote_user: elvis
+          remote_key: ${{ secrets.HEXO_DEPLOY_KEY }}
 
       
