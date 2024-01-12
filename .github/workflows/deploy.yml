@@ -27,16 +27,6 @@ jobs:
         # docs: https://gohugo.io/hugo-pipes/minification/
         run: hugo --minify
 
-      # - name: Deploy
-      #   uses: appleboy/scp-action@v0.1.7
-      #   with:
-      #     host: ${{ secrets.HOST }}
-      #     username: ${{ secrets.USERNAME }}
-      #     password: ${{ secrets.PASSWORD }}
-      #     port: ${{ secrets.PORT }}
-      #     source: "./public"
-      #     target: /home/elvis/hugo/
-
       # 部署
       - name: Deploy
         uses: burnett01/rsync-deployments@6.0.0
