@@ -1,3 +1,6 @@
 [submodule "themes/again"]
 	path = themes/again
 	url = https://github.com/DrakeLeung/hexo-theme-again.git
+[submodule "themes/Ning"]
+	path = themes/Ning
+	url = https://github.com/ning0818/hexo-theme-ning.git
