@@ -41,7 +41,7 @@ jobs:
       - name: Deploy
         uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-            username: 'elvis'   # ssh user name
+            username: 'root'   # ssh user name
             server: '8.134.95.44' # 引用之前创建好的secret
             ssh_private_key: ${{ secrets.HEXO_DEPLOY_KEY }} # 引用之前创建好的secret
             local_path: './public'  # 对应我们项目build的文件夹路径（config.yml）
