@@ -27,7 +27,7 @@ jobs:
         mkdir -p ~/.ssh/
         echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
         chmod 600 ~/.ssh/id_rsa
-        ssh-keyscan ifmet.cn >> ~/.ssh/known_hosts
+        ssh-keyscan 8.134.95.44 >> ~/.ssh/known_hosts
         git config --global user.name "elvis"
         git config --global user.email "elvis.liang@gmail.com"
         npm i -g hexo-cli
