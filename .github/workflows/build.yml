@@ -1,5 +1,6 @@
 # 工作流程的名称
-name: Hexo Deploy GitHub Page + Aliyun
+name: Hexo Deploy Aliyun
+run-name: Hexo Deploy Aliyun 🚀
 
 on:
   push:
