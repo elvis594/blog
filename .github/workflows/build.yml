@@ -1,6 +1,6 @@
 # 工作流程的名称
 name: Hexo Deploy Aliyun
-run-name: Hexo Deploy Aliyun run on ${GITHUB_REF##*/}🚀
+run-name: Hexo Deploy Aliyun 🚀
 
 on:
   workflow_dispatch:
