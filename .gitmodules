@@ -1,12 +1,3 @@
-[submodule "themes/again"]
-	path = themes/again
-	url = https://github.com/DrakeLeung/hexo-theme-again.git
-[submodule "themes/Ning"]
-	path = themes/Ning
-	url = https://github.com/ning0818/hexo-theme-ning.git
-[submodule "themes/cactus"]
-	path = themes/cactus
-	url = https://github.com/probberechts/hexo-theme-cactus.git
-[submodule "themes/Claudia"]
-	path = themes/Claudia
-	url = git@github.com:Haojen/hexo-theme-Claudia.git
+[submodule "themes/Chic"]
+	path = themes/Chic
+	url = https://github.com/elvis594/hexo-theme-Chic.git
