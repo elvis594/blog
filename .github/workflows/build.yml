@@ -1,5 +1,5 @@
 # 工作流程的名称
-name: Hexo Deploy Aliyun
+name: Deploy Aliyun
 run-name: Hexo Deploy Aliyun 🚀
 
 on:
