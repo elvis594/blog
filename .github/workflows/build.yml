@@ -1,12 +1,10 @@
 # 工作流程的名称
 name: Hexo Deploy Aliyun
-run-name: Hexo Deploy Aliyun 🚀
+run-name: Hexo Deploy Aliyun run on ${GITHUB_REF##*/}🚀
 
 on:
   workflow_dispatch:
-  # push:
-  #   branches:
-  #     - blog
+  push:
 
 jobs:
   build:
