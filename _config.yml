@@ -101,4 +101,7 @@ theme: landscape
 # Deployment
 ## Docs: https://hexo.io/docs/one-command-deployment
 deploy:
-  type: ''
+  type: git
+  repo: elvis@8.134.95.44:/home/elvis/blog.git
+  branch: master                           
+  message: '站点更新:{{now("YYYY-MM-DD HH:mm:ss")}}'
