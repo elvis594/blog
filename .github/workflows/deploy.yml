@@ -27,14 +27,24 @@ jobs:
         # docs: https://gohugo.io/hugo-pipes/minification/
         run: hugo --minify
 
+      # - name: Deploy
+      #   uses: appleboy/scp-action@v0.1.7
+      #   with:
+      #     host: ${{ secrets.HOST }}
+      #     username: ${{ secrets.USERNAME }}
+      #     password: ${{ secrets.PASSWORD }}
+      #     port: ${{ secrets.PORT }}
+      #     source: "./public"
+      #     target: /home/elvis/hugo/
+
+      # 部署
       - name: Deploy
-        uses: appleboy/scp-action@v0.1.7
+        uses: wlixcc/SFTP-Deploy-Action@v1.0
         with:
-          host: ${{ secrets.HOST }}
-          username: ${{ secrets.USERNAME }}
-          password: ${{ secrets.PASSWORD }}
-          port: ${{ secrets.PORT }}
-          source: "public"
-          target: /home/elvis/hugo/
+            username: 'elvis'   # ssh user name
+            server: '8.134.95.44' # 引用之前创建好的secret
+            ssh_private_key: ${{ secrets.HEXO_DEPLOY_KEY }} # 引用之前创建好的secret
+            local_path: './public'  # 对应我们项目build的文件夹路径（config.yml）
+            remote_path: '/home/elvis/hugo/' # 要部署到的位置
 
       
