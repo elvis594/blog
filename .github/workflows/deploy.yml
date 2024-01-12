@@ -3,15 +3,15 @@ run-name: Hugo Deploy Aliyun 🚀
 
 on: 
   push:
-    branch:
-      - hugo
+      branches:
+        - hugo
   workflow_dispatch: 
 
 jobs:
   build:
     runs-on: ubuntu-22.04
 
-    step:
+    steps:
       - uses: actions/checkout@v4
         with:
           submodules: true  # Fetch Hugo themes (true OR recursive)
