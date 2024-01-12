@@ -1,33 +1,35 @@
-
-name: Hexo build and deploy
+# 工作流程的名称
+name: Hexo Deploy GitHub Page + Aliyun
 
 on:
   push:
-    branches: [ dev ]
+    branches:
+      - master
 
 jobs:
   build:
-
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
+    
     steps:
     - name: Checkout
-      uses: actions/checkout@v2 # If you're using actions/checkout@v2 you must set persist-credentials to false in most cases for the deployment to work correctly.
-      with:
-        persist-credentials: false
-        # checkout到你的hexo代码分支
-        ref: blog
-        # hexo需要加载内部子模块
-        submodules: true
-    - name: Install and Build
-      run: |
-        npm install
-        npm run build
-    - name: Deploy to aliyun server
-      uses: easingthemes/ssh-deploy@v2.0.7
+      uses: actions/checkout@v2.3.4
+      
+    - name: Setup Node.js environment
+      uses: actions/setup-node@v2.1.5
+      with: 
+        node-version: "14.x"
+    
+    - name: Hexo deploy
       env:
-        SSH_PRIVATE_KEY: ${{ secrets.ALIYUN_SERVER_ACCESS_TOKEN }}
-        ARGS: "-avz --delete"
-        SOURCE: "public"
-        REMOTE_HOST: ${{ secrets.ALIYUN_SERVER_HOST }}
-        REMOTE_USER: "root"
-        TARGET: "/root/dist/"
+        HEXO_DEPLOY_KEY: ${{ secrets.HEXO_DEPLOY_KEY }}
+        
+      run: |
+        mkdir -p ~/.ssh/
+        echo "$HEXO_DEPLOY_KEY" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan ifmet.cn >> ~/.ssh/known_hosts
+        git config --global user.name "elvis"
+        git config --global user.email "elvis.liang@gmail.com"
+        npm i -g hexo-cli
+        npm i
+        hexo clean && hexo generate && hexo deploy
