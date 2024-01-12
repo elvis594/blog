@@ -14,6 +14,8 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v2.3.4
+      with:
+          ref: blog
       
     - name: Setup Node.js environment
       uses: actions/setup-node@v2.1.5
