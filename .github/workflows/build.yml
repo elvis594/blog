@@ -4,7 +4,7 @@ name: Hexo Deploy GitHub Page + Aliyun
 on:
   push:
     branches:
-      - main
+      - blog
 
 jobs:
   build:
