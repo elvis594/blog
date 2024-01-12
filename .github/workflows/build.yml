@@ -3,9 +3,10 @@ name: Hexo Deploy Aliyun
 run-name: Hexo Deploy Aliyun 🚀
 
 on:
-  push:
-    branches:
-      - blog
+  workflow_dispatch:
+  # push:
+  #   branches:
+  #     - blog
 
 jobs:
   build:
